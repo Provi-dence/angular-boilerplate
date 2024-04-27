@@ -2,21 +2,21 @@ import { NgModule } from '@angular/core';
 import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
-import { ProfileRoutingModule } from './profile-routing.module';
+import { AdminRoutingModule } from './admin-routing.module';
+import { SubNavComponent } from './subnav.component';
 import { LayoutComponent } from './layout.component';
-import { DetailsComponent } from './details.component';
-import { UpdateComponent } from './update.component';
+import { OverviewComponent } from './overview.component';
 
 @NgModule({
     imports: [
         CommonModule,
         ReactiveFormsModule,
-        ProfileRoutingModule
+        AdminRoutingModule
     ],
     declarations: [
+        SubNavComponent,
         LayoutComponent,
-        DetailsComponent,
-        UpdateComponent
+        OverviewComponent
     ]
 })
-export class ProfileModule { }
+export class AdminModule { }

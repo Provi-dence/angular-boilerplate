@@ -1,12 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { first } from 'rxjs/operators';
 
-import { AccountService } from '@pp/_services';
-import { Account } from '../_models';
+import { AccountService } from '@app/_services';
+import { Account } from '@app/_models';
 
-@Component({templateUrl: 'list.component.html'})
+@Component({ templateUrl: 'list.component.html' })
 export class ListComponent implements OnInit {
-    accounts: Account[];
+    accounts: any[];
 
     constructor(private accountService: AccountService) {}
 
@@ -20,9 +20,9 @@ export class ListComponent implements OnInit {
         const account = this.accounts.find(x => x.id === id);
         account.isDeleting = true;
         this.accountService.delete(id)
-        .pipe(first())
-        .subscribe(() => {
-            this.accounts = this.accounts.filter(x => x.id !== id)
-        });
+            .pipe(first())
+            .subscribe(() => {
+                this.accounts = this.accounts.filter(x => x.id !== id) 
+            });
     }
 }
